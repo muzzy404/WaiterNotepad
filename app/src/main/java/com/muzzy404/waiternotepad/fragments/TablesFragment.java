@@ -1,7 +1,6 @@
 package com.muzzy404.waiternotepad.fragments;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -29,7 +28,7 @@ public class TablesFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_tables, container, false);
 
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_tables);
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_orders);
 
         return rootView;
     }
@@ -38,10 +37,12 @@ public class TablesFragment extends Fragment {
     public class Order implements Comparable<Order> {
         private int number;
         private int table;
+        private String description;
 
-        Order(int number, int table) {
+        Order(int number, int table, String description) {
             this.number = number;
             this.table = table;
+            this.description = description;
         }
 
         public int getNumber() {
@@ -55,23 +56,23 @@ public class TablesFragment extends Fragment {
         // for sorting of books
         @Override
         public int compareTo(@NonNull Order o) {
-            return Integer.valueOf(table).compareTo(Integer.valueOf(o.table));
+            return Integer.valueOf(table).compareTo(o.table);
         }
     }
 
 
     private Order[] createOrders() {
         Order[] orders = {
-                new Order(1, 3),
-                new Order(2, 3),
-                new Order(30, 1),
-                new Order(40, 3),
-                new Order(50, 7),
-                new Order(51, 7),
-                new Order(52, 3),
-                new Order(53, 3),
-                new Order(54, 7),
-                new Order(55, 1),
+                new Order(1, 3, "fat ugly woman"),
+                new Order(2, 3, "little girl with red balloon"),
+                new Order(30, 1, "man in black suit"),
+                new Order(40, 3, "pretty girl in blue dress"),
+                new Order(50, 7, "beautiful old woman"),
+                new Order(51, 7, "red head"),
+                new Order(52, 3, "my best friend"),
+                new Order(53, 3, "stupid russians"),
+                new Order(54, 7, "smart little boy"),
+                new Order(55, 1, "poor old man"),
         };
 
         Arrays.sort(orders);

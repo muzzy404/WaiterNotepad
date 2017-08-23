@@ -12,7 +12,11 @@
     <item type="id" name="nav_serve"/>
     <item type="id" name="nav_close"/>
 
-    <!-- Tables cards -->
-    <item type="id" name="recycler_view_tables"/>
+    <!-- Orders cards -->
+    <item type="id" name="recycler_view_orders"/>
+    <item type="id" name="card_order"/>
+    <item type="id" name="order_card_title"/>
+    <item type="id" name="order_card_description"/>
+    <item type="id" name="order_card_table"/>
 
 </resources>

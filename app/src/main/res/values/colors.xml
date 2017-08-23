@@ -15,9 +15,9 @@
     <color name="colorWhite">#ffffff</color>
 
     <!-- orders colors -->
-    <color name="colorTablePink">#EC407A</color>
-    <color name="colorTablePurple">#7C4DFF</color>
-    <color name="colorTableBlue">#448AFF</color>
-    <color name="colorTableOrange">#FF5722</color>
+    <color name="colorCardPink">#EC407A</color>
+    <color name="colorCardPurple">#7C4DFF</color>
+    <color name="colorCardBlue">#448AFF</color>
+    <color name="colorCardOrange">#FF5722</color>
 
 </resources>
