@@ -1,7 +1,5 @@
 package com.muzzy404.waiternotepad;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -18,7 +16,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int TAKE_PAGE  = 1;
+    private static final int EDIT_PAGE = 1;
     private static final int SERVE_PAGE = 2;
     private static final int CLOSE_PAGE = 3;
 
@@ -28,20 +26,20 @@ public class MainActivity extends AppCompatActivity {
 
     private TablesFragment tablesFragment;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+    private BottomNavigationView.OnNavigationItemSelectedListener onNavItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.nav_take:
-                    //getSupportActionBar().setTitle(R.string.title_bar_take);
+                case R.id.nav_edit:
+                    selectedPage = EDIT_PAGE;
                     return true;
                 case R.id.nav_serve:
-                    //getSupportActionBar().setTitle(R.string.title_bar_serve);
+                    selectedPage = SERVE_PAGE;
                     return true;
                 case R.id.nav_close:
-                    //getSupportActionBar().setTitle(R.string.title_bar_close);
+                    selectedPage = CLOSE_PAGE;
                     return true;
             }
             return false;
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(getCurrentDateTitle());
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setOnNavigationItemSelectedListener(onNavItemSelectedListener);
 
         tablesFragment = new TablesFragment();
 
@@ -72,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         transaction.add(R.id.activity_main_container, tablesFragment);
         transaction.commit();
 
-        selectedPage = TAKE_PAGE;
+        selectedPage = EDIT_PAGE;
     }
 
     @Override

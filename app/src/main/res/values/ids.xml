@@ -8,7 +8,7 @@
     <item type="id" name="toolbar_settings"/>
 
     <!-- Navigation bar -->
-    <item type="id" name="nav_take"/>
+    <item type="id" name="nav_edit"/>
     <item type="id" name="nav_serve"/>
     <item type="id" name="nav_close"/>
 

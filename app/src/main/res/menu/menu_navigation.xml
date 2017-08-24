@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@id/nav_take"
+        android:id="@id/nav_edit"
         android:icon="@drawable/ic_take_black_24dp"
-        android:title="@string/title_take" />
+        android:title="@string/title_edit" />
 
     <item
         android:id="@id/nav_serve"

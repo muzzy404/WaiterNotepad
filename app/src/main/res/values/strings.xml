@@ -1,15 +1,16 @@
 <resources>
     <string name="app_name">Waiter Notepad</string>
 
-    <string name="title_take">Take</string>
+    <string name="title_edit">Edit</string>
     <string name="title_serve">Serve</string>
     <string name="title_close">Close</string>
 
-    <string name="title_bar_take">Take/edit order</string>
-    <string name="title_bar_serve">Serve table</string>
-    <string name="title_bar_close">Close order</string>
-
     <!-- Settings -->
     <string name="title_settings">Settings</string>
+
+    <!-- Cards -->
+    <string name="title_order_number">Order %d</string>
+    <string name="title_table_number">Table %d</string>
+    <string name="default_card_description">no description</string>
 
 </resources>
