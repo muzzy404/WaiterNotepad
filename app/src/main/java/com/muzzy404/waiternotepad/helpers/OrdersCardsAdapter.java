@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.muzzy404.waiternotepad.Order;
 import com.muzzy404.waiternotepad.R;
-import com.muzzy404.waiternotepad.fragments.TablesFragment;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -21,7 +21,7 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
 
     private Resources res;
 
-    private TablesFragment.Order[] orders;
+    private Order[] orders;
     private Integer[] colors;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -51,7 +51,7 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
         }
     }
 
-    public OrdersCardsAdapter(TablesFragment.Order[] orders) {
+    public OrdersCardsAdapter(Order[] orders) {
         this.orders = orders;
         colors = new Integer[orders.length];
     }
