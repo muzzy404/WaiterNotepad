@@ -16,6 +16,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int NONE = 0;
     private static final int EDIT_PAGE = 1;
     private static final int SERVE_PAGE = 2;
     private static final int CLOSE_PAGE = 3;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            //findViewById(R.id.navigation).setVisibility(View.GONE);
+
             switch (item.getItemId()) {
                 case R.id.nav_edit:
                     selectedPage = EDIT_PAGE;

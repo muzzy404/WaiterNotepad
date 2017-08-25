@@ -15,10 +15,10 @@
     <color name="colorWhite">#ffffff</color>
 
     <!-- orders colors -->
-    <color name="colorCardGrey">#78909C</color>
-    <color name="colorCardBlue">#448AFF</color>
-    <color name="colorCardPurple">#9C27B0</color>
-    <color name="colorCardPink">#E91E63</color>
-    <color name="colorCardRed">#F44336</color>
+    <color name="colorCardGrey">#CC78909C</color>
+    <color name="colorCardBlue">#CC448AFF</color>
+    <color name="colorCardPurple">#CC9C27B0</color>
+    <color name="colorCardGreen">#CC4CAF50</color>
+    <color name="colorCardPink">#CCFF4081</color>
 
 </resources>

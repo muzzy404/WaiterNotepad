@@ -1,4 +1,4 @@
-package com.muzzy404.waiternotepad.fragments;
+package com.muzzy404.waiternotepad.helpers;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -12,26 +12,27 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.muzzy404.waiternotepad.R;
+import com.muzzy404.waiternotepad.fragments.TablesFragment;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 
 public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.ViewHolder> {
 
-    Resources res;
+    private Resources res;
 
     private TablesFragment.Order[] orders;
     private Integer[] colors;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView orderTitle;
-        public TextView orderTable;
-        public TextView orderDescription;
+        private TextView orderTitle;
+        private TextView orderTable;
+        private TextView orderDescription;
 
-        public CardView card;
+        private CardView card;
 
-        public ViewHolder(View itemView) {
+        private ViewHolder(View itemView) {
             super(itemView);
 
             orderTitle = (TextView) itemView.findViewById(R.id.order_card_title);
@@ -66,8 +67,8 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
         colorsSet.add(ContextCompat.getColor(context, R.color.colorCardBlue));
         colorsSet.add(ContextCompat.getColor(context, R.color.colorCardPurple));
         colorsSet.add(ContextCompat.getColor(context, R.color.colorCardPink));
-        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardRed));
         colorsSet.add(ContextCompat.getColor(context, R.color.colorCardGrey));
+        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardGreen));
 
         Iterator<Integer> it = colorsSet.iterator();
         Integer currentColor = it.next();

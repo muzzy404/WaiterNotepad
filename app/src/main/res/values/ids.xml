@@ -19,4 +19,6 @@
     <item type="id" name="order_card_description"/>
     <item type="id" name="order_card_table"/>
 
+    <item type="id" name="btn_add_new_order"/>
+
 </resources>

@@ -3,6 +3,7 @@ package com.muzzy404.waiternotepad.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.muzzy404.waiternotepad.R;
+import com.muzzy404.waiternotepad.helpers.OrdersCardsAdapter;
 
 import java.util.Arrays;
 
@@ -19,6 +21,8 @@ public class TablesFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+
+    private FloatingActionButton fabAddOrder;
 
     private Order[] testOrdersSet;
 
@@ -35,6 +39,7 @@ public class TablesFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_tables, container, false);
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_orders);
+        fabAddOrder = (FloatingActionButton) rootView.findViewById(R.id.btn_add_new_order);
         //recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(getContext());
