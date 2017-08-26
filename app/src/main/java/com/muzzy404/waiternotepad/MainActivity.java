@@ -82,6 +82,32 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onCardClick(int order, int table) {
         Log.d("callback listener", "Order = " + order + ", table = " + table);
+
+        switch (navigation.getSelectedItemId()) {
+            case R.id.nav_edit:
+                Toast.makeText(getApplicationContext(),
+                        "Edit activity, order = " + order + ", table = " + table,
+                        Toast.LENGTH_SHORT).show();
+                return;
+            case R.id.nav_serve:
+                Toast.makeText(getApplicationContext(),
+                        "Serve activity, order = " + order + ", table = " + table,
+                        Toast.LENGTH_SHORT).show();
+                return;
+            case R.id.nav_close:
+                Toast.makeText(getApplicationContext(),
+                        "Close activity, order = " + order + ", table = " + table,
+                        Toast.LENGTH_SHORT).show();
+
+                // TODO: remove this later
+                orders = new Order[] { new Order(1, 3, "fat ugly woman") };
+
+                // TODO: load again all orders from database
+
+                break;
+        }
+
+        adapter.refreshOrdersSet(orders);
     }
 
     private Order[] createTestOrdersSet() {
@@ -109,8 +135,7 @@ public class MainActivity extends AppCompatActivity implements
 
         @Override
         public void onClick(View v) {
-            orders = new Order[] { new Order(1, 3, "fat ugly woman") };
-            adapter.refreshOrdersSet(orders);
+            Toast.makeText(getApplicationContext(), "Add new", Toast.LENGTH_SHORT).show();
         }
     }
 }

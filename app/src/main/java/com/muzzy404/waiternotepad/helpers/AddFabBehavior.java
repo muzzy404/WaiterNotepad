@@ -1,5 +1,4 @@
 package com.muzzy404.waiternotepad.helpers;
-
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -34,9 +33,9 @@ public class AddFabBehavior extends FloatingActionButton.Behavior {
                     (CoordinatorLayout.LayoutParams) child.getLayoutParams();
             child.animate().translationY(child.getHeight()
                     + params.bottomMargin).setInterpolator(new LinearInterpolator()).start();
-        } else if (dyConsumed < 0) {
+        } else {
             child.animate().translationY(0).setInterpolator(new LinearInterpolator()).start();
         }
-
     }
+
 }
