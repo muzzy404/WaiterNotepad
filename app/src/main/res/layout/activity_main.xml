@@ -24,7 +24,6 @@
             android:scaleType="centerCrop"
             android:src="@drawable/background_image"/>
 
-
         <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -37,10 +36,10 @@
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@id/btn_add_new_order"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="16dp" />
+                style="@style/FabStyle"
+                app:fabSize="normal"
+                app:layout_behavior="com.muzzy404.waiternotepad.helpers.AddFabBehavior"
+                app:srcCompat="@drawable/ic_add_white_24dp" />
 
         </android.support.design.widget.CoordinatorLayout>
 
@@ -48,12 +47,7 @@
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
-        app:itemIconTint="@color/btm_nav_item_selected"
-        app:itemTextColor="@color/btm_nav_item_selected"
+        style="@style/BottomNavigationViewStyle"
         app:menu="@menu/menu_navigation" />
 
 </LinearLayout>

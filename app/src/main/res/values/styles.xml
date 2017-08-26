@@ -11,38 +11,53 @@
     <!-- Order card style -->
     <style name="OrderCardViewStyle" parent="Theme.AppCompat">
         <item name="cardElevation">0dp</item>
-        <item name="cardCornerRadius">4dp</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
 
-        <item name="contentPaddingBottom">24dp</item>
-        <item name="contentPaddingTop">24dp</item>
-        <item name="contentPaddingLeft">16dp</item>
-        <item name="contentPaddingRight">16dp</item>
+        <item name="contentPaddingBottom">@dimen/card_content_padding_vertical</item>
+        <item name="contentPaddingTop">@dimen/card_content_padding_vertical</item>
+        <item name="contentPaddingLeft">@dimen/card_content_padding_horizontal</item>
+        <item name="contentPaddingRight">@dimen/card_content_padding_horizontal</item>
 
-        <item name="android:layout_marginTop">2dp</item>
-        <item name="android:layout_marginBottom">2dp</item>
-        <item name="android:layout_marginLeft">8dp</item>
-        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginTop">@dimen/card_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/card_margin_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/card_margin_padding_horizontal</item>
+        <item name="android:layout_marginRight">@dimen/card_margin_padding_horizontal</item>
 
-        <item name="cardBackgroundColor">@color/colorCardPink</item>
+        <item name="cardBackgroundColor">@color/colorCardPurple</item>
     </style>
 
     <!-- Card title style -->
     <style name="CardTitleStyle">
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">@dimen/card_title_text_size</item>
         <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingBottom">@dimen/card_title_bottom_padding</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
     <!-- Card orderDescription style -->
     <style name="CardDescriptionStyle">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">@dimen/card_description_text_size</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="BottomNavigationViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom</item>
+
+        <item name="itemIconTint">@color/btm_nav_item_selected</item>
+        <item name="itemTextColor">@color/btm_nav_item_selected</item>
+    </style>
+
+    <style name="FabStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+    </style>
 
 </resources>
