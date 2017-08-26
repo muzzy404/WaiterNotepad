@@ -14,15 +14,46 @@ import android.widget.TextView;
 import com.muzzy404.waiternotepad.Order;
 import com.muzzy404.waiternotepad.R;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 
 public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.ViewHolder> {
 
+    private MainActivityCallback callback;
+
     private Resources res;
+    private LinkedList<Integer> colorsSet = new LinkedList<>();
 
     private Order[] orders;
     private Integer[] colors;
+
+    private void loadOrdersSet(Order[] ordersSet) {
+        orders = ordersSet;
+        Arrays.sort(orders);
+
+        // set color to each card
+        colors = new Integer[orders.length];
+        Iterator<Integer> it = colorsSet.iterator();
+        Integer currentColor = it.next();
+
+        for(int i = 0; i < orders.length - 1; ++i) {
+            colors[i] = currentColor;
+            if (orders[i + 1].getTable() != orders[i].getTable()) {
+                if (!it.hasNext()){
+                    it = colorsSet.iterator();
+                }
+                currentColor = it.next();
+            }
+        }
+        colors[colors.length - 1] = currentColor;
+    }
+
+    public void refreshOrdersSet(Order[] ordersSet) {
+        loadOrdersSet(ordersSet);
+        notifyDataSetChanged();
+    }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -40,28 +71,12 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
             orderDescription = (TextView) itemView.findViewById(R.id.order_card_description);
 
             card = (CardView) itemView.findViewById(R.id.card_order);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d("listener", "position = " + getAdapterPosition());
-                }
-            });
-
         }
     }
 
-    public OrdersCardsAdapter(Order[] orders) {
-        this.orders = orders;
-        colors = new Integer[orders.length];
-    }
-
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LinkedList<Integer> colorsSet = new LinkedList<>();
-        Context context = parent.getContext();
-
-        res = parent.getResources();
+    public OrdersCardsAdapter(Order[] orders, Context context) {
+        callback = (MainActivityCallback) context;
+        res = context.getResources();
 
         // colorsSet for cards
         colorsSet.add(ContextCompat.getColor(context, R.color.colorCardBlue));
@@ -70,21 +85,12 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
         colorsSet.add(ContextCompat.getColor(context, R.color.colorCardGrey));
         colorsSet.add(ContextCompat.getColor(context, R.color.colorCardGreen));
 
-        Iterator<Integer> it = colorsSet.iterator();
-        Integer currentColor = it.next();
+        loadOrdersSet(orders);
+    }
 
-        for(int i = 0; i < orders.length - 1; ++i) {
-            colors[i] = currentColor;
-            if (orders[i + 1].getTable() != orders[i].getTable()) {
-                if (!it.hasNext()){
-                    it = colorsSet.iterator();
-                }
-                currentColor = it.next();
-            }
-        }
-        colors[colors.length - 1] = currentColor;
-
-        View view = LayoutInflater.from(context)
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.order_card_layout, parent, false);
 
         return new ViewHolder(view);
@@ -92,10 +98,23 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int i) {
+        Log.d("adapter deb", "bind");
+
         holder.orderTitle.setText(res.getString(R.string.title_order_number, orders[i].getNumber()));
         holder.orderTable.setText(res.getString(R.string.title_table_number, orders[i].getTable()));
         holder.orderDescription.setText(orders[i].getDescription());
         holder.card.setCardBackgroundColor(colors[i]);
+
+        final int pos = i;
+
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callback.onCardClick(
+                        orders[pos].getNumber(),
+                        orders[pos].getTable());
+            }
+        });
     }
 
     @Override
@@ -103,4 +122,7 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
         return orders.length;
     }
 
+    public interface MainActivityCallback {
+        void onCardClick(final int order, final int table);
+    }
 }

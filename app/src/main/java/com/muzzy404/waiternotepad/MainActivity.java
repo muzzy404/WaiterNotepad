@@ -10,24 +10,24 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.muzzy404.waiternotepad.helpers.OrdersCardsAdapter;
 
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements
+        OrdersCardsAdapter.MainActivityCallback {
 
     private Toolbar toolbar;
     private BottomNavigationView navigation;
+    private FloatingActionButton fabAddOrder;
 
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-
-    private FloatingActionButton fabAddOrder;
+    private OrdersCardsAdapter adapter;
 
     private Order[] orders;
 
@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         orders = createTestOrdersSet();
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
+
         fabAddOrder = (FloatingActionButton) findViewById(R.id.btn_add_new_order);
+        fabAddOrder.setOnClickListener(new AddNewOrder());
 
         toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new OrdersCardsAdapter(orders);
+        adapter = new OrdersCardsAdapter(orders, this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -70,16 +72,22 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.toolbar_settings:
-                Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.title_settings),
+                        Toast.LENGTH_SHORT).show();
                 return true;
         }
         return false;
     }
 
+    @Override
+    public void onCardClick(int order, int table) {
+        Log.d("callback listener", "Order = " + order + ", table = " + table);
+    }
+
     private Order[] createTestOrdersSet() {
         Log.d("creation", "test data set of orders creation");
 
-        Order[] orders = {
+        return new Order[] {
                 new Order(1, 3, "fat ugly woman"),
                 new Order(2, 3, "little girl with red balloon"),
                 new Order(30, 1, "man in black suit"),
@@ -95,8 +103,14 @@ public class MainActivity extends AppCompatActivity {
                 new Order(100, 4, "smart little boy"),
                 new Order(103, 4, "poor old man"),
         };
+    }
 
-        Arrays.sort(orders);
-        return orders;
+    private class AddNewOrder implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            orders = new Order[] { new Order(1, 3, "fat ugly woman") };
+            adapter.refreshOrdersSet(orders);
+        }
     }
 }
