@@ -13,38 +13,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@id/order_card_title"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/card_title_size"
+            android:textColor="@color/colorCardRed"
+            style="?android:listSeparatorTextViewStyle"
+            android:text="@string/title_order_number" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@id/order_card_title"
-                style="@style/CardTitleStyle"
-                android:text="@string/title_order_number" />
+            android:padding="@dimen/card_bottom_content_padding"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@id/order_card_description"
                 style="@style/CardDescriptionStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="start|center_vertical"
                 android:text="@string/default_card_description" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="20dp"
-            android:paddingRight="0dp">
 
             <TextView
                 android:id="@id/order_card_table"
                 style="@style/CardDescriptionStyle"
-                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="@dimen/order_card_icon_left_margin"
+                android:layout_marginStart="@dimen/order_card_icon_left_margin"
+
+                android:layout_marginRight="@dimen/card_padding"
+                android:layout_marginEnd="@dimen/card_padding"
+
+                android:gravity="center"
+                android:layout_gravity="end|center_vertical"
                 android:drawableTop="@drawable/ic_order_48dp"
                 android:text="@string/title_table_number" />
+
         </LinearLayout>
 
     </LinearLayout>

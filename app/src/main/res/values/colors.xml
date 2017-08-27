@@ -14,13 +14,13 @@
 
     <color name="colorWhite">#ffffff</color>
 
-    <color name="colorCardTitle">#ffffff</color>
-    <color name="colorCardDescription">#F5F5F5</color>
-    <color name="colorBackground">#424242</color>
+    <color name="colorCardDescription">#616161</color>
+    <color name="colorBackground">#E0E0E0</color>
 
     <!-- orders colors -->
-    <color name="colorCardPurple">#DD7E57C2</color>
-    <color name="colorCardIndigo">#DD3949AB</color>
-    <color name="colorCardBlue">#DD1E88E5</color>
+    <color name="colorCardGreen">#2E7D32</color>
+    <color name="colorCardIndigo">#3949AB</color>
+    <color name="colorCardPink">#AD1457</color>
+    <color name="colorCardRed">#D50000</color>
 
 </resources>

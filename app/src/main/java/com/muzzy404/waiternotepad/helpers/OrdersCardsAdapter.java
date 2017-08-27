@@ -78,9 +78,10 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
         res = context.getResources();
 
         // colorsSet for cards
+        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardRed));
+        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardGreen));
+        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardPink));
         colorsSet.add(ContextCompat.getColor(context, R.color.colorCardIndigo));
-        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardPurple));
-        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardBlue));
 
         loadOrdersSet(orders);
     }
@@ -100,7 +101,9 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
         holder.orderTitle.setText(res.getString(R.string.title_order_number, orders[i].getNumber()));
         holder.orderTable.setText(res.getString(R.string.title_table_number, orders[i].getTable()));
         holder.orderDescription.setText(orders[i].getDescription());
-        holder.card.setCardBackgroundColor(colors[i]);
+
+        holder.orderTitle.setTextColor(colors[i]);
+        //holder.card.setCardBackgroundColor(colors[i]);
 
         final int pos = i;
 

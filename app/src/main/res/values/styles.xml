@@ -13,35 +13,18 @@
         <item name="cardElevation">0dp</item>
         <item name="cardCornerRadius">@dimen/card_corner_radius</item>
 
-        <item name="contentPaddingBottom">@dimen/card_content_padding_vertical</item>
-        <item name="contentPaddingTop">@dimen/card_content_padding_vertical</item>
-        <item name="contentPaddingLeft">@dimen/card_content_padding_horizontal</item>
-        <item name="contentPaddingRight">@dimen/card_content_padding_horizontal</item>
-
         <item name="android:layout_marginTop">@dimen/card_margin_vertical</item>
         <item name="android:layout_marginBottom">@dimen/card_margin_vertical</item>
-        <item name="android:layout_marginLeft">@dimen/card_margin_padding_horizontal</item>
-        <item name="android:layout_marginRight">@dimen/card_margin_padding_horizontal</item>
+        <item name="android:layout_marginLeft">@dimen/card_margin_horizontal</item>
+        <item name="android:layout_marginRight">@dimen/card_margin_horizontal</item>
 
-        <item name="cardBackgroundColor">@color/colorCardPurple</item>
-    </style>
-
-    <!-- Card title style -->
-    <style name="CardTitleStyle">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/card_title_text_size</item>
-        <item name="android:textColor">@color/colorCardTitle</item>
-        <item name="android:paddingBottom">@dimen/card_title_bottom_padding</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="cardBackgroundColor">@color/colorWhite</item>
     </style>
 
     <!-- Card orderDescription style -->
     <style name="CardDescriptionStyle">
         <item name="android:textSize">@dimen/card_description_text_size</item>
         <item name="android:textColor">@color/colorCardDescription</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="BottomNavigationViewStyle">
