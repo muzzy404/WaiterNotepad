@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.muzzy404.waiternotepad.Order;
 import com.muzzy404.waiternotepad.R;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -79,11 +78,9 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
         res = context.getResources();
 
         // colorsSet for cards
-        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardBlue));
+        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardIndigo));
         colorsSet.add(ContextCompat.getColor(context, R.color.colorCardPurple));
-        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardPink));
-        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardGrey));
-        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardGreen));
+        colorsSet.add(ContextCompat.getColor(context, R.color.colorCardBlue));
 
         loadOrdersSet(orders);
     }

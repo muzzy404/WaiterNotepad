@@ -30,7 +30,7 @@
     <style name="CardTitleStyle">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/card_title_text_size</item>
-        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorCardTitle</item>
         <item name="android:paddingBottom">@dimen/card_title_bottom_padding</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -39,7 +39,7 @@
     <!-- Card orderDescription style -->
     <style name="CardDescriptionStyle">
         <item name="android:textSize">@dimen/card_description_text_size</item>
-        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorCardDescription</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>

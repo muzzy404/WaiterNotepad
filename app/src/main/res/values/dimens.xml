@@ -6,11 +6,11 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <!-- cards dimens -->
-    <dimen name="card_corner_radius">4dp</dimen>
+    <dimen name="card_corner_radius">2dp</dimen>
     <dimen name="card_content_padding_vertical">24dp</dimen>
     <dimen name="card_content_padding_horizontal">16dp</dimen>
     <dimen name="card_margin_vertical">2dp</dimen>
-    <dimen name="card_margin_padding_horizontal">8dp</dimen>
+    <dimen name="card_margin_padding_horizontal">4dp</dimen>
 
     <!-- text and title dimens -->
     <dimen name="card_title_text_size">25sp</dimen>

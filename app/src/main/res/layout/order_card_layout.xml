@@ -43,7 +43,7 @@
                 android:id="@id/order_card_table"
                 style="@style/CardDescriptionStyle"
                 android:layout_gravity="center"
-                android:drawableTop="@drawable/ic_order_white_48dp"
+                android:drawableTop="@drawable/ic_order_48dp"
                 android:text="@string/title_table_number" />
         </LinearLayout>
 
