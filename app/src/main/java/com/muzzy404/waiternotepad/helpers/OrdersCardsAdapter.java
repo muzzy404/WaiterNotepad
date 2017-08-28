@@ -74,8 +74,8 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
     }
 
     public OrdersCardsAdapter(Order[] orders, Context context) {
-        callback = (MainActivityCallback) context;
         res = context.getResources();
+        callback = (MainActivityCallback) context;
 
         // colorsSet for cards
         colorsSet.add(ContextCompat.getColor(context, R.color.colorCardRed));
@@ -103,7 +103,6 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
         holder.orderDescription.setText(orders[i].getDescription());
 
         holder.orderTitle.setTextColor(colors[i]);
-        //holder.card.setCardBackgroundColor(colors[i]);
 
         final int pos = i;
 
@@ -120,6 +119,11 @@ public class OrdersCardsAdapter extends RecyclerView.Adapter<OrdersCardsAdapter.
     @Override
     public int getItemCount() {
         return orders.length;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return orders[position].getNumber();
     }
 
     public interface MainActivityCallback {

@@ -5,12 +5,12 @@
     <item type="id" name="btn_add_new_order"/>
 
     <!-- Toolbar menu -->
-    <item type="id" name="toolbar_settings"/>
+    <item type="id" name="toolbar_main_delete_all"/>
 
     <!-- Navigation bar -->
     <item type="id" name="nav_edit"/>
     <item type="id" name="nav_serve"/>
-    <item type="id" name="nav_close"/>
+    <item type="id" name="nav_payment"/>
 
     <!-- Orders cards -->
     <item type="id" name="recycler_view_orders"/>

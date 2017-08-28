@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements
     private Order[] orders;
 
     private String getCurrentDateTitle() {
-        return new SimpleDateFormat("EEEE d MMM yyyy").format(new Date());
+        return new SimpleDateFormat("EEE d MMM yyyy").format(new Date());
     }
 
     @Override
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements
         fabAddOrder.setOnClickListener(new AddNewOrder());
 
         toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_toolbar_nav_menu_24dp);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(getCurrentDateTitle());
 
@@ -64,15 +67,15 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        getMenuInflater().inflate(R.menu.menu_main_toolbar, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.toolbar_settings:
-                Toast.makeText(getApplicationContext(), getString(R.string.title_settings),
+            case R.id.toolbar_main_delete_all:
+                Toast.makeText(getApplicationContext(), getString(R.string.title_delete_all),
                         Toast.LENGTH_SHORT).show();
                 return true;
         }
@@ -94,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements
                         "Serve activity, order = " + order + ", table = " + table,
                         Toast.LENGTH_SHORT).show();
                 return;
-            case R.id.nav_close:
+            case R.id.nav_payment:
                 Toast.makeText(getApplicationContext(),
                         "Close activity, order = " + order + ", table = " + table,
                         Toast.LENGTH_SHORT).show();
@@ -125,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements
                 new Order(54, 7, "smart little boy"),
                 new Order(55, 1, "poor old man"),
                 new Order(56, 8, "my best friend"),
-                new Order(57, 9, "stupid russians"),
+                new Order(57, 99, "stupid russians"),
                 new Order(100, 4, "smart little boy"),
                 new Order(103, 4, "poor old man"),
         };
