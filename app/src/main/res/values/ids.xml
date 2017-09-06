@@ -19,4 +19,9 @@
     <item type="id" name="order_card_description"/>
     <item type="id" name="order_card_table"/>
 
+    <!-- Edit item cards -->
+    <item type="id" name="card_item_edit"/>
+    <item type="id" name="btn_item_edit_card_add"/>
+    <item type="id" name="btn_item_edit_card_sub"/>
+
 </resources>

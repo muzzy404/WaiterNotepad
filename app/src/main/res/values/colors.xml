@@ -23,4 +23,8 @@
     <color name="colorCardPink">#AD1457</color>
     <color name="colorCardRed">#D50000</color>
 
+    <!-- buttons +/- colors -->
+    <color name="colorBtnAdd">#43A047</color>
+    <color name="colorBtnSub">#C62828</color>
+
 </resources>

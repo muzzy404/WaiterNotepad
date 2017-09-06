@@ -13,4 +13,7 @@
     <string name="title_table_number">Table %d</string>
     <string name="default_card_description">no description</string>
 
+    <string name="item_card_name_example">Item very long name of some dish example (200 ml)</string>
+    <string name="item_card_number">%d</string>
+
 </resources>

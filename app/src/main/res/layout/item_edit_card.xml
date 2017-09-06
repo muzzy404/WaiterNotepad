@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/card_item_edit"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:clickable="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/card_content_padding"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/card_content_padding"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                style="@style/CardItemStyle"
+                android:text="@string/item_card_name_example"
+                android:textAllCaps="false"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingRight="@dimen/card_content_padding"
+                android:paddingEnd="@dimen/card_content_padding"
+                android:paddingLeft="@dimen/no_gap"
+                android:paddingStart="@dimen/no_gap"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@id/btn_item_edit_card_sub"
+                    android:contentDescription="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_remove_circle_red_40dp" />
+
+                <TextView
+                    style="@style/CardItemNumberStyle"
+                    android:text="@string/item_card_number" />
+
+                <ImageView
+                    android:id="@id/btn_item_edit_card_add"
+                    android:contentDescription="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_add_circle_green_40dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <include layout="@layout/separator" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

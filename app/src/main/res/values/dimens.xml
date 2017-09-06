@@ -21,6 +21,10 @@
     <dimen name="card_title_size">18sp</dimen>
     <dimen name="card_description_text_size">14sp</dimen>
 
+    <dimen name="card_item_title_size">16sp</dimen>
+    <dimen name="card_item_number_size">18sp</dimen>
+    <dimen name="card_item_number_window_width_size">24dp</dimen>
+
     <!-- others -->
     <dimen name="no_gap">0dp</dimen>
 </resources>

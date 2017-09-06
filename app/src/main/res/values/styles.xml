@@ -8,6 +8,19 @@
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
     </style>
 
+    <style name="CardTextParentStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/card_title_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/card_title_vertical_padding</item>
+        <item name="android:paddingLeft">@dimen/card_content_padding</item>
+        <item name="android:paddingRight">@dimen/card_content_padding</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- ====================================================================================== -->
+
     <!-- Order card style -->
     <style name="OrderCardViewStyle" parent="Theme.AppCompat">
         <item name="cardElevation">3dp</item>
@@ -21,25 +34,42 @@
         <item name="cardBackgroundColor">@color/colorWhite</item>
     </style>
 
-    <style name="CardTitleStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+    <!-- Order card title style -->
+    <style name="CardTitleStyle" parent="CardTextParentStyle">
         <item name="android:textSize">@dimen/card_title_size</item>
         <item name="android:textColor">@color/colorAccentDark</item>
-        <item name="android:paddingLeft">@dimen/card_content_padding</item>
-        <item name="android:paddingTop">@dimen/card_title_vertical_padding</item>
-        <item name="android:paddingBottom">@dimen/card_title_vertical_padding</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">left</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <!-- Card orderDescription style -->
+    <!-- Order card description style -->
     <style name="CardDescriptionStyle">
         <item name="android:textSize">@dimen/card_description_text_size</item>
         <item name="android:textColor">@color/colorCardDescription</item>
     </style>
 
+    <!-- ====================================================================================== -->
+
+    <!-- Card item edit title style -->
+    <style name="CardItemStyle" parent="CardTextParentStyle">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/card_item_title_size</item>
+        <item name="android:textColor">@color/textColorAccent</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Card item edit number style -->
+    <style name="CardItemNumberStyle">
+        <item name="android:layout_width">@dimen/card_item_number_window_width_size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/card_item_number_size</item>
+        <item name="android:textColor">@color/colorAccentNotChecked</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- ====================================================================================== -->
     <style name="BottomNavigationViewStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
